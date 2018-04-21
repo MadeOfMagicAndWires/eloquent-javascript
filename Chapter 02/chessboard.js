@@ -36,10 +36,10 @@ let grid = "";
 let black = '\u25A0';
 let white = '\u25A1';
 
-for (i=1;i<=size;i++) {
+for (i=0;i<size;i++) {
 
     //for each row add squares
-    for (j=1;j<=size;j++) {
+    for (j=0;j<size;j++) {
         // Add white or black square based on evenness of row and column.
         grid += ((j+i) % 2 === 0) ? black : white;
     }
