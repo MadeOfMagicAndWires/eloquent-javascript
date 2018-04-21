@@ -27,7 +27,7 @@
 // with 2 exceptions. For the numbers divisable by 3, print "Fizz" instead of
 // the number, and for numbers divisable by 5 (and not 3) print "Buzz" instead.
 
-for(var i=1;i<=100;i++){
+for(let i=1;i<=100;i++){
   if ((i % 3) === 0 && (i % 5) !== 0 && i != 0) {
     console.log("Fizz");
   } else if ((i % 5) === 0 && (i % 3) !== 0 && i != 0) {
@@ -39,7 +39,7 @@ for(var i=1;i<=100;i++){
 
 // When you have that working modif your program to print "FizzBuzz" for numbers
 // that are divisable by both 3 and 5.
-for(var i=1;i<=100;i++) {
+for(let i=1;i<=100;i++) {
     if ((i % 3) === 0 && (i % 5) === 0) console.log("FizzBuzz");
     else if ((i%3) === 0 && (i%5) !== 0) console.log("Fizz");
     else if ((i%5) === 0 && (i%3) !== 0) console.log ("Buzz");
