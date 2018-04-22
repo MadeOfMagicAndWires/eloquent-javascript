@@ -34,8 +34,8 @@ function countBs(str) {
 
 function countChar(str, charMatch) {
     let results = 0;
-    for (let letter of str) {
-        if (letter == charMatch) results++;
+    for(let i=0;i<str.length;i++) {
+        if(str.charAt(i) == charMatch) results++;
     }
     return results;
 }
