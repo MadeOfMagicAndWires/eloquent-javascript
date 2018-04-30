@@ -28,13 +28,13 @@
 // the number, and for numbers divisable by 5 (and not 3) print "Buzz" instead.
 
 for(let i=1;i<=100;i++){
-  if ((i % 3) === 0 && (i % 5) !== 0 && i != 0) {
-    console.log("Fizz");
-  } else if ((i % 5) === 0 && (i % 3) !== 0 && i != 0) {
-    console.log("Buzz");
-  } else {
-    console.log(i);
-  }
+    if ((i % 3) === 0 && (i % 5) !== 0 && i != 0) {
+        console.log("Fizz");
+    } else if ((i % 5) === 0 && (i % 3) !== 0 && i != 0) {
+        console.log("Buzz");
+    } else {
+        console.log(i);
+    }
 }
 
 // When you have that working modif your program to print "FizzBuzz" for numbers

@@ -29,6 +29,6 @@
 let stairs = "#";
 
 while(stairs.length <= 7) {
-  console.log(stairs);
-  stairs = stairs + "#";
+    console.log(stairs);
+    stairs = stairs + "#";
 }

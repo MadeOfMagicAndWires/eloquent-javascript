@@ -26,7 +26,7 @@
 // a number that indicates how many uppercase "B" characters are in the string.
 
 function countBs(str) {
-    return countChar(str, 'B');
+    return countChar(str, "B");
 }
 
 // Next write a function called countChar that behaves like countBs, except it
@@ -40,5 +40,5 @@ function countChar(str, charMatch) {
     return results;
 }
 
-countBs('BBC');
-countChar('kakkerlak', 'k');
+countBs("BBC");
+countChar("kakkerlak", "k");
