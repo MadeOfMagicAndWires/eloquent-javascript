@@ -29,21 +29,23 @@
 // grid of the given witdth and height.
 
 // Using /u25A0 and /u25A1 for clarity.
+'use strict';
 
 let size = 8;
-let grid = "";
+let grid = ``;
 
-let black = "\u25A0";
-let white = "\u25A1";
+let black = `\u25A0`;
+let white = `\u25A1`;
 
 for (let i=0;i<size;i++) {
-
-    //for each row add squares
-    for (let j=0;j<size;j++) {
-        // Add white or black square based on evenness of row and column.
-        grid += ((j+i) % 2 === 0) ? black : white;
-    }
-    // finish row with newline
-    grid += "\n";
+  // for each row add squares
+  for (let j=0;j<size;j++) {
+    // Add white or black square based on evenness of row and column.
+    grid += ((j+i) % 2 === 0) ? black : white;
+  }
+  // finish row with newline
+  grid += `\n`;
 }
 console.log(grid);
+
+// vim: set ts=2 sts=2 sw=2 et:

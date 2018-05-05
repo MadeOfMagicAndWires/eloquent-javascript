@@ -22,36 +22,39 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 // Write a range function that takes two arguments, 'start' and 'end', and returns
 // an array containing all the numbers from 'start' up to (and including) 'end'.
 
 function range(start, end, step) {
 
-    let arr = [];
-    step = (arguments.length >= 3) ? step : 1; 
+  let arr = [];
 
-    if(step<0){
-        for(;start>=end;start+=step) {
-            arr.push(start);
-        }
+  step = (arguments.length >= 3) ? step : 1;
+
+  if(step<0){
+    for(;start>=end;start+=step) {
+      arr.push(start);
     }
-    else {
-        for(;start<=end;start+=step) {
-            arr.push(start);
-        }
+  } else {
+    for(;start<=end;start+=step) {
+      arr.push(start);
     }
-    return arr;
+  }
+  return arr;
 }
 
 // Next write a sum function that takes an array of numbers and returns the sum
 // of these numbers.
 
 function sum(numbers) {
-    let sum = 0;
-    for(let num of numbers) {
-        sum +=  Number(num);
-    }
-    return sum;
+  let result = 0;
+
+  for(let num of numbers) {
+    result += Number(num);
+  }
+  return result;
 }
 
 // Run the previous program and see whether it does indeed return 55.

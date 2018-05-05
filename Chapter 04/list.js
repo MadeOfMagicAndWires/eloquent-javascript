@@ -22,72 +22,79 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 // Write a function arrayToList that builds up a data structure like the
 // previous one when given "[1,2,3]" as an argument.
 function arrayToList(arr) {
-    let curr = null;
-    let root = curr;
-    for(let each of arr) {
-        let buf = {
-            value: each,
-            next: null
-        };
+  let curr = null;
+  let root = curr;
 
-        // init first node, we need this because else we can't read curr.next otherwise.
-        if(root == null) {
-            curr = buf;
-            root = curr;
-            continue;
-        }
+  for(let each of arr) {
+    let buf = {
+      value: each,
+      next: null
+    };
 
-        while(curr.next != null) {
-            curr = curr.next;
-        }
-        curr.next = buf;
+    // init first node, we need this because else we can't read curr.next otherwise.
+    if(root === null) {
+      curr = buf;
+      root = curr;
+      continue;
     }
-    return root;
+
+    while(curr.next !== null) {
+      curr = curr.next;
+    }
+    curr.next = buf;
+  }
+  return root;
 }
 
 // Write a 'listTiArray' function that produces an array from a list.
 function listToArray(list) {
-    let curr = list;
-    let arr = [];
-    while(curr.next != null) {
-        if(curr.value) arr.push(curr.value);
-        curr = curr.next;
-    }
-    return arr; }
+  let curr = list;
+  let arr = [];
+
+  while(curr.next !== null) {
+    if(curr.value) { arr.push(curr.value); }
+    curr = curr.next;
+  }
+  return arr;
+}
 
 // Also write the helper function 'prepend' which takes an element and a list an
 // creates a new list that adds the element to the front of the input list.
 function prepend(element, list) {
-    return {value: element, next: list};
+  return {value: element, next: list};
 }
 
 // write the helper function 'nth' which tales a list and a number an returns
 // the element at the given position in the list.
 
 function nth(list,n) {
-    let curr = list;
-    for(let i=0;i<n;i++) {
-        if (curr.next != null) {
-            curr = curr.next;
+  let curr = list;
 
-        } else {
-            return undefined; 
-        }
+  for(let i=0;i<n;i++) {
+    if (curr.next !== null) {
+      curr = curr.next;
+
+    } else {
+      return undefined;
     }
-    return curr.value;
+  }
+  return curr.value;
 
 }
 
 // If you haven't already also write a recursive version of nth
 function recursiveNth(list, n) {
-    if(n == 0) {
-        return  list.value;
-    } else if(list.next) {
-        recursiveNth(list.next, n-1);
-    } else return undefined;
+  if(n === 0) {
+    return list.value;
+  } else if(list.next) {
+    recursiveNth(list.next, n-1);
+  } else { return undefined; }
+
 }
 
 console.log(arrayToList([10, 20]));
@@ -101,4 +108,3 @@ console.log(nth(arrayToList([10, 20, 30]), 1));
 console.log(nth(arrayToList([10, 20, 30]), 3));
 // → undefined
 console.log(recursiveNth(arrayToList([10, 20, 30]), 0));
-    

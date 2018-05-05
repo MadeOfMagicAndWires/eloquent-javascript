@@ -22,23 +22,27 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 // Write a function countBs that takes a string as its only argument and returns
 // a number that indicates how many uppercase "B" characters are in the string.
 
 function countBs(str) {
-    return countChar(str, "B");
+  return countChar(str, `B`);
 }
 
 // Next write a function called countChar that behaves like countBs, except it
 // takes a second argument that indicates the character that is to be counted.
 
 function countChar(str, charMatch) {
-    let results = 0;
-    for(let i=0;i<str.length;i++) {
-        if(str.charAt(i) == charMatch) results++;
-    }
-    return results;
+  let results = 0;
+
+  for(let i=0;i<str.length;i++) {
+    if(str.charAt(i) === charMatch) { results++; }
+  }
+  return results;
 }
 
-countBs("BBC");
-countChar("kakkerlak", "k");
+
+countBs(`BBC`);
+countChar(`kakkerlak`, `k`);

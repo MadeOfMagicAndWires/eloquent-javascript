@@ -23,6 +23,8 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 // Define a recursive function function isEven corresponding to this
 // discription:
 // Zero is even
@@ -30,17 +32,24 @@
 // For any other number N, its evenness is the same as N - 2
 
 function isEven(n,isNegativeNumber) {
-    if(n == 0) return true;
-    else if (n == 1) return false;
-    else if (isNegativeNumber == undefined) isNegativeNumber = (n < 0) ? true : false;
+  if(n === 0) {
+    return true;
+  } else if (n === 1) {
+    return false;
+  } else if (isNegativeNumber === undefined) {
+    isNegativeNumber = (n < 0);
+  }
 
-    if (isNegativeNumber) {
-        return isEven(n+2, isNegativeNumber);
-    } else {
-        return isEven(n-2, isNegativeNumber);
-    }
+  if (isNegativeNumber) {
+    return isEven(n+2, isNegativeNumber);
+  } else {
+    return isEven(n-2, isNegativeNumber);
+  }
 }
 
 console.log(isEven(50));
+// true
 console.log(isEven(75));
+// false
 console.log(isEven(-1));
+// false

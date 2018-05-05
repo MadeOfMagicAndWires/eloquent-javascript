@@ -21,16 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+'use strict';
 
 // Load ancestry JSON data.
 let ANCESTRY_FILE;
-if (typeof module != "undefined") {
-  ANCESTRY_FILE = require("./data/ancestry.js");
+
+if (typeof module !== `undefined`) {
+  ANCESTRY_FILE = require(`./data/ancestry.js`);
 }
 let ancestry = JSON.parse(ANCESTRY_FILE);
 
 
-ANCESTRY_FILE = require("./data/ancestry.js");
+ANCESTRY_FILE = require(`./data/ancestry.js`);
 ancestry = JSON.parse(ANCESTRY_FILE);
 
 
@@ -83,23 +85,23 @@ let groupedAverage = groupAverage(mapCentury(ancestry));
 
 for(const index in groupedAverage) {
   if(index) {
-    console.log(index + " : " + groupedAverage[index].toFixed(1));
+    console.log(`${index} : ${groupedAverage[index].toFixed(1)}`);
   }
 }
 
-console.log("\ngroupBy");
+console.log(`\ngroupBy`);
 
 let groupedByInitials = groupBy(ancestry, (person) => {
   let re = /[A-Z]/g;
 
-  return person.name.match(re).join(".");
+  return person.name.match(re).join(`.`);
 });
 
 for(let [index, group] of groupedByInitials) {
   if (index) {
     console.log(index);
     for(let person of group) {
-      console.log("\t" + person.name);
+      console.log(`\t${person.name}`);
     }
   }
 }

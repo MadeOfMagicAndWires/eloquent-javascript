@@ -25,10 +25,13 @@
 
 // Write a loop that makes seven calls to console.log to output the following
 // triangle:
+'use strict';
 
-let stairs = "#";
+let stairs = `#`;
 
 while(stairs.length <= 7) {
-    console.log(stairs);
-    stairs = stairs + "#";
+  console.log(stairs);
+  stairs = stairs + `#`;
 }
+
+// vim: set ts=2 sts=2 sw=2 et:

@@ -22,32 +22,40 @@
  * SOFTWARE.
  */
 
+'use strict';
+
 // Write a function deepEqual that takes two values and return true only if they
 // are the same value or are objects with the same properties whose values are
 // also equal when compared with a recursive call to deepEqual.
 
 function deepEqual(a, b) {
-    if(a === null && b === null) return true;
-    else if (a === null && b !== null) return false;
-    else if (typeof(a) !== typeof(b)) return false;
-    else if (typeof(a) !== "object" && a === b) return true;
-    else if (typeof(a) !== "object" && a !== b) return false;
-    else if (typeof(a) === "object") {
-        for(let propa in a) {
-            if(deepEqual(a[propa], b[propa])) {
-                continue;
-            } else {
-                return false;
-            }
-        }
-        return true;
+  if(a === null && b === null) {
+    return true;
+  } else if (a === null && b !== null) {
+    return false;
+  } else if (typeof(a) !== typeof(b)) {
+    return false;
+  } else if (typeof(a) !== `object` && a === b) {
+    return true;
+  } else if (typeof(a) !== `object` && a !== b) {
+    return false;
+  } else if (typeof(a) === `object`) {
+    for(let propa in a) {
+      if(deepEqual(a[propa], b[propa])) {
+        continue;
+      } else {
+        return false;
+      }
     }
+    return true;
+  }
 }
 
-let obj = {here: {is: "an"}, object: 2};
+let obj = {here: {is: `an`}, object: 2};
+
 console.log(deepEqual(obj, obj));
 // → true
 console.log(deepEqual(obj, {here: 1, object: 2}));
 // → false
-console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+console.log(deepEqual(obj, {here: {is: `an`}, object: 2}));
 // → true
