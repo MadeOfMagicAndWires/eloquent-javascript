@@ -70,16 +70,8 @@ rules: # http://eslint.org/docs/rules
 
   # ES6
 
+  ecmaVersion: 6
   prefer-arrow-callback: [1]
-
-
-  # Overrides to `eslint:recommended` rule set
-
-  no-console: [0]
-
-extends: "eslint:recommended"
-
-ecmaFeatures:
   arrowFunctions: true
   blockBindings: true
   defaultParams: true
@@ -87,3 +79,10 @@ ecmaFeatures:
   forOf: true
   spread: true
   templateStrings: true
+
+  # Overrides to `eslint:recommended` rule set
+
+  no-console: [0]
+
+extends: "eslint:recommended"
+
