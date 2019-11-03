@@ -80,6 +80,8 @@ parserOptions:
   forOf: true
   spread: true
   templateStrings: true
+  sourceType: module
+
 
   # Overrides to `eslint:recommended` rule set
 
