@@ -127,21 +127,21 @@ export {Group};
 
 /** Test Group class */
 
-console.log("***" , "Testing Group class", "***");
-let group = new Group(10, 20, 30);
-
-console.log(group.values);
-// → [10 , 20 ,30]
-
-group = Group.from([10, 20]);
-console.log(group.has(10));
-// → true
-console.log(group.has(30));
-// → false
-console.log(group.add(10));
-console.log(group.values);
-// → -1
-// [10 , 20]
-group.del(10);
-console.log(group.has(10));
+// console.log("***" , "Testing Group class", "***");
+// let group = new Group(10, 20, 30);
+//
+// console.log(group.values);
+// // → [10 , 20 ,30]
+//
+// group = Group.from([10, 20]);
+// console.log(group.has(10));
+// // → true
+// console.log(group.has(30));
+// // → false
+// console.log(group.add(10));
+// console.log(group.values);
+// // → -1
+// // [10 , 20]
+// group.del(10);
+// console.log(group.has(10));
 // → false
