@@ -81,6 +81,7 @@ parserOptions:
   spread: true
   templateStrings: true
   sourceType: module
+  impliedStrict: false
 
 
   # Overrides to `eslint:recommended` rule set
