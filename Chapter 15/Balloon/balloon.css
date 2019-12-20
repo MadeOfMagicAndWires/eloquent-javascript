@@ -1,0 +1,9 @@
+p {
+    position: fixed;
+    font-size: 32px;
+    text-align: center;
+    margin: 50vh 50vw;
+    transform: translate(-50%, -50% );
+    opacity: 1;
+    transition: opacity 0.5s;
+}
