@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+   - Pixel Art Editor Exercises
+   - Copyright © 2020 Joost Bremmer
+   -
+   - Permission is hereby granted, free of charge, to any person obtaining
+   - a copy of this software and associated documentation files (the "Software"),
+   - to deal in the Software without restriction, including without limitation
+   - the rights to use, copy, modify, merge, publish, distribute, sublicense,
+   - and/or sell copies of the Software, and to permit persons to whom the
+   - Software is furnished to do so, subject to the following conditions:
+   -
+   - The above copyright notice and this permission notice shall be included
+   - in all copies or substantial portions of the Software.
+   -
+   - THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   - EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+   - OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+   - IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+   - DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+   - TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+   - OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+   -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Pixel Art Editor Exercises</title>
+        <script src="https://eloquentjavascript.net/code/chapter/19_paint.js">
+        </script>
+        <!-- Keyboard Bindings Exercise -->
+        <script src="keyboardBindings.js"></script>
+        <!-- Efficient Drawing Exercise -->
+        <script src="efficientDrawing.js" charset="utf-8"></script>
+        <!-- Circle Exercise -->
+        <script src="circle.js" charset="utf-8"></script>
+        <!-- Proper Lines Exercise -->
+        <script src="properLines.js" charset="utf-8"></script>
+        <!-- Proper Lines Exercise -->
+        <script src="ClearButton.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="container"/>
+        <script defer="true">
+            document.getElementById("container").appendChild(
+            startPixelEditor({
+                "tools": Object.assign(baseTools, {
+                    "draw": draw,
+                    "circle": circle,
+                    "line": line,
+                    "old draw": oldDraw}),
+                    "controls": baseControls.concat([ResetButton])
+                }),
+            );
+        </script>
+    </body>
+</html>
