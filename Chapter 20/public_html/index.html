@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>A Public Space on the Web</title>
+        <link rel="stylesheet" href="style.css" type="text/css" media="all">
+        <script src="index.js" charset="utf-8" defer="true"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="file_server" >
+                <fieldset id="action_picker">
+                    <legend>Action to preform</legend>
+                        <div id="read">
+                            <input type="radio"
+                                   name="action"
+                                   id="choose_read"
+                                   value="GET"
+                                   >
+                            <label for="choose_read">Read file</label>
+                        </div>
+                        <div id="edit">
+                            <input type="radio"
+                                   name="action"
+                                   value="PUT"
+                                   id="choose_edit">
+                            <label for="edit">Edit file</label>
+                        </div>
+                        <div id="mkdir">
+                            <input type="hidden"
+                                   name="action"
+                                   value="MKCOL"
+                                   id="choose_mkdir"/>
+                        </div>
+                        <div id="delete">
+                            <input type="radio"
+                                   name="action"
+                                   value="DELETE"
+                                   id="choose_delete">
+                            <label for="choose_delete">Delete file</label>
+                        </div>
+                        <div id="move">
+                            <input type="radio"
+                                   name="action"
+                                   value="MOVE"
+                                   id="choose_move">
+                            <label for="choose_move">Move file</label>
+                        </div>
+                </fieldset>
+                <fieldset id="file_container">
+                    <legend>Select a file</legend>
+                    <div id="file_type_picker">
+                        <div id=existing_file>
+                            <input type="radio"
+                                   name="file_type"
+                                   value="existing"
+                                   id="pick_existing_file">
+                            <label for="existing_file">Existing File</label>
+                        </div>
+                        <div id="new_file">
+                            <input
+                             type="radio"
+                             name="file_type"
+                             value="new"
+                             id="pick_new_file">
+                            <label for="pick_new_file">New file</label>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div id="choose_existing_file_container">
+                        <label for="choose_existing_file">
+                            Choose an existing file:
+                        </label>
+                        <select name="File" id="choose_existing_file">
+                            <option value="sandbox.html" name="sandbox.html">
+                                sandbox.html
+                            </option>
+                        </select>
+                    </div>
+                    <div id="choose_new_file_container">
+                        <label for="choose_new_file_path">
+                            Choose the new file path:
+                        </label>
+                        <input type="text" name="Choose new file's  path"
+                                           id="choose_new_file_path"
+                                           placeholder="New file path">
+                        <div id="path_is_dir_container">
+                            <input type="checkbox"
+                                   name="Is this path a directory?"
+                                   id="path_is_dir">
+                            <label for="is_dir">Path is directory</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset id="content_container">
+                    <legend><span>Content:</span></legend>
+                    <textarea id="content"></textarea>
+                    <div id="submit_container">
+                        <input id="submit" type="button" value="Save"></input>
+                        <pre id="output"></pre>
+                    </div>
+                </fieldset>
+                    </div>
+            </div>
+    </body>
+</html>

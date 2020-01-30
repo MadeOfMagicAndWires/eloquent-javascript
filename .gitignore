@@ -1,1 +1,8 @@
 *.zip
+*/node_modules/*
+Chapter 20/public_html/**/*
+
+!Chapter 20/public_html/README.md
+!Chapter 20/public_html/index.html
+!Chapter 20/public_html/index.js
+!Chapter 20/public_html/style.css

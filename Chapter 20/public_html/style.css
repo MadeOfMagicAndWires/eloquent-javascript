@@ -1,0 +1,107 @@
+#container {
+    margin: auto;
+    width: 50vw;
+    background: #e9eef1;
+    padding: 25px;
+}
+
+
+#action_picker {
+    display: grid;
+    grid: auto-flow dense / repeat(4, 1fr);
+}
+
+#action_picker #mkdir {
+    display: none;
+}
+
+#file_type_picker{
+    display: grid;
+    grid: auto-flow dense / repeat(4, 1fr);
+}
+
+#action_picker input,
+#file_type_picker label {
+    display: inline-block;
+}
+
+#file_container hr {
+    height: 1px;
+    border: 0px;
+    background: #bbb;
+}
+
+
+#choose_existing_file_container,
+#choose_new_file_container {
+    display: grid;
+    grid: auto-flow dense / repeat(3, 1fr);
+}
+
+#choose_existing_file_container.hidden,
+#choose_new_file_container.hidden {
+    display: none;
+}
+
+#choose_new_file_container {
+    margin: 10px 0 0 0;
+}
+
+#choose_new_file_container #path_is_dir_container {
+    margin: 5px 0 0 10px;
+}
+
+
+input[type=radio] {
+	-moz-appearance: radio;
+	-webkit-appearance: radio;
+	appearance: radio;
+    min-height: 16px;
+    min-width: 16px;
+}
+
+
+input[type="radio"][disabled] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+
+	background: lightgrey;
+	border: 1px solid #999;
+	border-radius: 50%;
+	width: 16px;
+	height: 16px;
+}
+
+label {
+    padding: 0 10px;
+}
+
+#content {
+    width: 100%;
+    min-height: 300px;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+#submit_container {
+    display:  inline-grid;
+    grid: auto-flow / 100px 1fr;
+}
+
+
+#submit {
+    margin: 10px 5px;
+}
+
+#output {
+    margin: 20px 50px;
+}
+
+#output.success {
+    color: #0a0;
+}
+
+#output.error {
+    color: #f00;
+}
