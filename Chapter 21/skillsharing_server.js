@@ -1,3 +1,4 @@
+#!/bin/env node
 /*
  * Skill Sharing Project Server
  * Copyright © 2020 Marijn Haverbeke
@@ -25,8 +26,8 @@ const {createServer} = require("http");
 const Router = require("./router");
 const ecstatic = require("ecstatic");
 
-var router = new Router();
-var defaultHeaders = {"Content-Type": "text/plain"};
+const router = new Router();
+const defaultHeaders = {"Content-Type": "text/plain"};
 
 var SkillShareServer = class SkillShareServer {
   constructor(talks) {
@@ -176,4 +177,52 @@ SkillShareServer.prototype.updated = function() {
   this.waiting = [];
 };
 
-new SkillShareServer(Object.create(null)).start(8000);
+
+/**
+ * Runs at the start of the program; initiates the server
+ *
+ * @param {string[]} argv command line arguments
+ * @returns {undefined}
+ */
+async function main(argv) {
+  let cmdParams = {port: 8000, talksF: Object.create(null)};
+
+  async function handleFlag(argument, index) {
+    switch(argument) {
+      case "-p":
+      case "--ports":
+        cmdParams.port = !isNaN(argv[index+1]) && parseInt(argv.splice(index+1,1)[0], 10);
+        console.log(`Setting port: ${cmdParams.port}`);
+        break;
+      case "-f":
+      case "--file":
+        cmdParams.talksF = argv.splice(index+1,1).shift();
+        console.log(`Setting talks file: ${cmdParams.talksF}`);
+        break;
+      default:
+        return;
+    }
+  }
+
+  // remove "node ./script arguements"
+  argv = (argv[0] === "node") ? argv.splice(2) : argv.splice(1);
+
+
+  for(let arg of argv) {
+    switch(arg[0]) {
+      case "-":
+        handleFlag(arg, argv.indexOf(arg), cmdParams);
+        break;
+      default:
+        break;
+    }
+  }
+
+  console.log("Starting server...");
+  new SkillShareServer(cmdParams.talksF).start(cmdParams.port);
+}
+
+// Run main function if this script is called directly
+if(require !== undefined && require.main === module) {
+  main(process.argv);
+}
